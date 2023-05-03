@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import ChefAllData from "./ChefSection/ChefAllData";
+import ExclusiveServices from "./ExclusiveServices/ExclusiveServices";
 
 const Home = () => {
   return (
@@ -25,9 +26,38 @@ const Home = () => {
         </div>
       </div>
 
-      <div>
-        <h2 className="text-center mt-8 font-bold text-4xl mb-8">Chef Section</h2>
+      <div className="">
+        <div className="flex justify-center">
+          <h2 className="text-center mt-8 font-bold text-4xl mb-8 exc">
+            Chef Section
+          </h2>
+        </div>
+        <div className=" ps-5 pr-5">
+          <p className="text-3xl text-center">
+            Chefs are an important part of the culinary industry and are often
+            celebrated for their creativity, skill, and dedication to their
+            craft.
+          </p>
+        </div>
         <ChefAllData></ChefAllData>
+      </div>
+      <div>
+        <div className="flex justify-center">
+          <h2 className="text-center mt-8 font-bold text-4xl mb-8 text-red-600 exc">
+           You should also view
+          </h2>
+        </div>
+
+        
+      </div>
+      <div>
+        <div className="flex justify-center">
+          <h2 className="text-center mt-8 font-bold text-4xl mb-8 text-red-600 exc">
+            Exclusive Services
+          </h2>
+        </div>
+
+        <ExclusiveServices></ExclusiveServices>
       </div>
     </div>
   );
