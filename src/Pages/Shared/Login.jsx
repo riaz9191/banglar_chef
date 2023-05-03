@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
-    const location = useLocation();
-    cosnt 
+  const location = useLocation();
+  const navigate = useNavigate();
   const { loginUser } = useContext(AuthContext);
   const handleSignIn = (event) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ const Login = () => {
         const user = res.user;
         console.log(user);
         form.reset();
-        <Navigate to='/'></Navigate>
+        navigate('/')
         // ...
       })
       .catch((error) => {
@@ -64,9 +64,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">
-                  Login
-                </button>
+                <button className="btn btn-primary">Login</button>
               </div>
               <p>
                 New here?{" "}

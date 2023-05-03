@@ -6,6 +6,7 @@ import ChefRecipe from "../Pages/ChefRecipe/ChefRecipe";
 import RecipeLayout from "../Layout/RecipeLayout/RecipeLayout";
 import Register from "../Pages/Shared/Register";
 import Login from "../Pages/Shared/Login";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: ":id",
-        element: <ChefRecipe></ChefRecipe>,
+        element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
       },
     ],
   },
