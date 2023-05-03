@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import ChefAllData from "./ChefSection/ChefAllData";
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
 
       <div>
         <h2 className="text-center mt-8 font-bold text-4xl mb-8">Chef Section</h2>
+        <ChefAllData></ChefAllData>
       </div>
     </div>
   );
