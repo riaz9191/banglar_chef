@@ -1,9 +1,21 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
-  const {user} = useContext(AuthContext)
+
+  const {user,logOut} = useContext(AuthContext)
+  console.log(user?.email)
+
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className=" mx-auto  sticky top-0 z-50">
       <div className="navbar bg-base-100 flex justify-between">
@@ -45,9 +57,12 @@ const Navbar = () => {
               </div>
             </label>
           </div>}
+          {user?.email ? <div>
+            <Link><button onClick={handleLogout} className="btn btnz ">Logout</button></Link>
+          </div> :
           <div>
             <Link to='/login'><button className="btn btnz ">Login</button></Link>
-          </div>
+          </div>}
         </div>
       </div>
     </div>
