@@ -3,6 +3,7 @@ import React from "react";
 import ChefAllData from "./ChefSection/ChefAllData";
 import ExclusiveServices from "./ExclusiveServices/ExclusiveServices";
 import AlsoView from "./AlsoView";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -22,7 +23,7 @@ const Home = () => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <button className="btn btn-primary">Register Here</button>
+            <Link to='/register'><button className="btn btn-primary">Register Here</button></Link>
           </div>
         </div>
       </div>

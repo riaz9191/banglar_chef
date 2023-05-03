@@ -9,7 +9,7 @@ const ErrorPage = () => {
       <p className="text-gray-500 text-xl">
         The page you're looking for does not exist.
       </p>
-      <Link></Link>
+      <Link className="btn mt-5" to='/'>Back to Home Page</Link>
     </div>
   );
 };
