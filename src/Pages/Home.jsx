@@ -2,6 +2,7 @@
 import React from "react";
 import ChefAllData from "./ChefSection/ChefAllData";
 import ExclusiveServices from "./ExclusiveServices/ExclusiveServices";
+import AlsoView from "./AlsoView";
 
 const Home = () => {
   return (
@@ -44,20 +45,19 @@ const Home = () => {
       <div>
         <div className="flex justify-center">
           <h2 className="text-center mt-8 font-bold text-4xl mb-8 text-red-600 exc">
-           You should also view
-          </h2>
-        </div>
-
-        
-      </div>
-      <div>
-        <div className="flex justify-center">
-          <h2 className="text-center mt-8 font-bold text-4xl mb-8 text-red-600 exc">
-            Exclusive Services
+           Exclusive Services
           </h2>
         </div>
 
         <ExclusiveServices></ExclusiveServices>
+      </div>
+      <div>
+        <div className="flex justify-center">
+          <h2 className="text-center mt-8 font-bold text-4xl mb-8 text-red-600 exc">
+          You should also view 
+          </h2>
+        </div>
+        <AlsoView></AlsoView>
       </div>
     </div>
   );
