@@ -4,8 +4,12 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
   const location = useLocation();
+  console.log(location)
   const navigate = useNavigate();
   const { loginUser } = useContext(AuthContext);
+
+  const from = location.state?.from?.pathname || '/'
+
   const handleSignIn = (event) => {
     event.preventDefault();
 
@@ -19,7 +23,7 @@ const Login = () => {
         const user = res.user;
         console.log(user);
         form.reset();
-        navigate('/')
+        navigate(from)
         // ...
       })
       .catch((error) => {
