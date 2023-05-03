@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
@@ -7,6 +7,7 @@ const Login = () => {
   console.log(location)
   const navigate = useNavigate();
   const { loginUser } = useContext(AuthContext);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const from = location.state?.from?.pathname || '/'
 
@@ -28,6 +29,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setErrorMessage(error.message);
       });
   };
 
@@ -70,6 +72,12 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              {errorMessage && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                  <strong className="font-bold">Error:</strong>
+                  <span className="block sm:inline ml-2">{errorMessage}</span>
+                </div>
+              )}
               <p>
                 New here?{" "}
                 <Link to="/register">

@@ -6,7 +6,7 @@ const ChefAllData = () => {
 
   useEffect(() => {
     const fetchChefData = async () => {
-      const response = await fetch("http://localhost:5000/chefData");
+      const response = await fetch("http://localhost:7000/chefData");
       const data = await response.json();
       setChefData(data);
     };
