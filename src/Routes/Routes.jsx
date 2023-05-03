@@ -7,6 +7,7 @@ import RecipeLayout from "../Layout/RecipeLayout/RecipeLayout";
 import Register from "../Pages/Shared/Register";
 import Login from "../Pages/Shared/Login";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../Pages/Shared/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -45,10 +46,19 @@ const router = createBrowserRouter([
       },
       {
         path: ":id",
-        element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
-        loader: ({params})=>fetch(`http://localhost:7000/chefdata/${params.id}`)
+        element: (
+          <PrivateRoute>
+            <ChefRecipe></ChefRecipe>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:7000/chefdata/${params.id}`),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 export default router;

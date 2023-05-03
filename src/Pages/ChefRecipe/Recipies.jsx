@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Recipies = ({
   id,
@@ -7,20 +8,34 @@ const Recipies = ({
   ingredients,
   cookingMethod,
   rating,
-  favorite,
-  recipePic
+  recipePic,
 }) => {
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsButtonDisabled(true);
+    toast.success(`${recipeName} added to your favorites!`, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
   return (
-    <div className="max-w-md mx-auto rounded-md overflow-hidden shadow-lg">
+    <div className="max-w-md mx-auto rounded-md overflow-hidden shadow-lg flex flex-col">
       <img
         className="w-full h-56 object-cover"
         src={recipePic}
         alt={recipeName}
       />
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <div className="flex items-center mb-2">
           <span className="text-2xl font-bold mr-2">{recipeName}</span>
-          <span className="text-base font-medium text-gray-500">{`(${chefId})`}</span>
+          
         </div>
         <div className="mb-4">
           <span className="font-bold mr-2">Ingredients:</span>
@@ -38,11 +53,17 @@ const Recipies = ({
           <span className="font-bold mr-2">Rating:</span>
           <span>{rating}</span>
         </div>
-        <div className="flex justify-end">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            {favorite ? "Remove from Favorites" : "Add to Favorites"}
-          </button>
-        </div>
+      </div>
+      <div className="p-4 flex justify-center items-center">
+        <button
+          className={`bg-red-500 ${
+            !isButtonDisabled ? "hover:bg-red-700" : "bg-red-300"
+          } text-white font-bold py-2 px-4 rounded`}
+          onClick={handleButtonClick}
+          disabled={isButtonDisabled}
+        >
+          Add to Favorites
+        </button>
       </div>
     </div>
   );
