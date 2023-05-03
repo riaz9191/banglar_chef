@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const {user} = useContext(AuthContext)
   return (
     <div className=" mx-auto  sticky top-0 z-50">
       <div className="navbar bg-base-100 flex justify-between">
@@ -36,15 +38,15 @@ const Navbar = () => {
           </nav>
         </div>
         <div className="flex-none">
-          <div className="dropdown dropdown-end">
+         { user && <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-2379004.jpg&fm=jpg" />
               </div>
             </label>
-          </div>
+          </div>}
           <div>
-            <button className="btn btnz ">Login</button>
+            <Link to='/login'><button className="btn btnz ">Login</button></Link>
           </div>
         </div>
       </div>
