@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import {  MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
   console.log(user?.photoURL);
   // console.log(user?.email)
@@ -15,6 +17,17 @@ const Navbar = () => {
         console.log(err);
       });
   };
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "luxury" : "light"));
+    const newTheme = theme === "light" ? "luxury" : "light";
+    document.documentElement.setAttribute("data-theme", newTheme);
+  };
+  
+
+  useEffect(() => {
+    document.body.classList.remove(theme === "light" ? "dark" : "light");
+    document.body.classList.add(theme);
+  }, [theme]);
 
   return (
     <div className=" mx-auto  sticky top-0 z-50 ">
@@ -98,7 +111,7 @@ const Navbar = () => {
                 to="/error"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
-               Error
+                Error
               </NavLink>
             </ul>
           </nav>
@@ -128,6 +141,9 @@ const Navbar = () => {
               </Link>
             </div>
           )}
+          <button onClick={toggleTheme} className="ps-3 text-3xl ">
+            {theme === "light" ? <MdDarkMode/> : <MdOutlineDarkMode/> } 
+          </button>
         </div>
       </div>
     </div>

@@ -26,10 +26,7 @@ const ExclusiveServices = () => {
           <div className="card-body flex">
             <h2 className="card-title justify-center">Regular Cooking</h2>
             <p>
-              Cooking is the art and science of preparing food using a variety
-              of techniques and ingredients. It is a fundamental human activity
-              that has been practiced for thousands of years, and it is an
-              essential part of every culture around the world.
+            This service offers traditional cooking using a variety of techniques and ingredients. It's a fundamental human activity that has been practiced for thousands of years, and it's an essential part of every culture around the world.
             </p>
           </div>
         </div>
@@ -40,10 +37,7 @@ const ExclusiveServices = () => {
           <div className="card-body flex">
             <h2 className="card-title justify-center">Cooking Strategy</h2>
             <p>
-              Cooking is the art and science of preparing food using a variety
-              of techniques and ingredients. It is a fundamental human activity
-              that has been practiced for thousands of years, and it is an
-              essential part of every culture around the world.
+            This service offers a customized approach to cooking, tailored to each individual's preferences and dietary needs. Whether you're looking to eat healthier or want to try new flavors and ingredients, the cooking strategy service can help you achieve your goals.
             </p>
           </div>
         </div>
@@ -54,10 +48,7 @@ const ExclusiveServices = () => {
           <div className="card-body flex">
             <h2 className="card-title justify-center">Private chef!</h2>
             <p>
-              Cooking is the art and science of preparing food using a variety
-              of techniques and ingredients. It is a fundamental human activity
-              that has been practiced for thousands of years, and it is an
-              essential part of every culture around the world.
+            This service offers a personal chef who will prepare meals in the comfort of your own home. Whether it's for a special occasion or just to make your day-to-day life easier, having a private chef is a luxurious and convenient way to enjoy delicious, home-cooked meals.
             </p>
           </div>
         </div>
@@ -68,10 +59,7 @@ const ExclusiveServices = () => {
           <div className="card-body flex">
             <h2 className="card-title justify-center">Cooking Classes</h2>
             <p>
-              Cooking is the art and science of preparing food using a variety
-              of techniques and ingredients. It is a fundamental human activity
-              that has been practiced for thousands of years, and it is an
-              essential part of every culture around the world.
+            This service offers hands-on cooking classes, where you can learn new techniques and recipes from a professional chef. It's a fun and interactive way to improve your cooking skills and impress your friends and family with your newfound culinary expertise.
             </p>
           </div>
         </div>
@@ -82,10 +70,7 @@ const ExclusiveServices = () => {
           <div className="card-body flex">
             <h2 className="card-title justify-center">Chef Manegement</h2>
             <p>
-              Cooking is the art and science of preparing food using a variety
-              of techniques and ingredients. It is a fundamental human activity
-              that has been practiced for thousands of years, and it is an
-              essential part of every culture around the world.
+            This service offers management and consultation for professional chefs and food service businesses. Whether you're looking to start a new restaurant or need help managing your current operations, the chef management service can provide the expertise and guidance you need to succeed.
             </p>
           </div>
         </div>
@@ -94,12 +79,9 @@ const ExclusiveServices = () => {
             <FaGrinAlt className="text-8xl text-red-600" />
           </figure>
           <div className="card-body flex">
-            <h2 className="card-title justify-center">Regular Cooking</h2>
+            <h2 className="card-title justify-center">Chef Management</h2>
             <p>
-              Cooking is the art and science of preparing food using a variety
-              of techniques and ingredients. It is a fundamental human activity
-              that has been practiced for thousands of years, and it is an
-              essential part of every culture around the world.
+            This service offers catering for events and gatherings of all sizes. Whether it's a corporate function, wedding, or birthday party, the catering service can provide delicious and personalized menus that will impress your guests and make your event memorable.
             </p>
           </div>
         </div>

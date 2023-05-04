@@ -8,7 +8,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import Spinner from "../daisy/Spiner";
 
 const Home = () => {
-  const { loading } = useContext(AuthContext);
+  const { loading,user } = useContext(AuthContext);
   if (loading) {
     return (
       <Spinner className="text-center" animation="border" variant="primary" />
@@ -34,11 +34,11 @@ const Home = () => {
           food. Whether you're looking for culinary inspiration or just love
           good food, you're sure to find something amazing here.
         </p>
-        <Link to="/register">
+        {!user && <Link to="/register">
           <button className="btn excz animate-bg hover:bg-green-600">
             Register Now
           </button>
-        </Link>
+        </Link>}
       </div>
     </div>
   </div>

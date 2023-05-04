@@ -35,11 +35,13 @@ const Register = () => {
             
             form.reset();
             setSuccess('Successfully Profile Created')
+            
             navigate(from)
           // ...
         })
         .catch((error) => {
           console.log(error.message);
+          setErr(error.message)
         });
     }
   };

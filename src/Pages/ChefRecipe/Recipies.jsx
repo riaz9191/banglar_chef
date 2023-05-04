@@ -35,7 +35,6 @@ const Recipies = ({
       <div className="p-4 flex flex-col flex-grow">
         <div className="flex items-center mb-2">
           <span className="text-2xl font-bold mr-2">{recipeName}</span>
-          
         </div>
         <div className="mb-4">
           <span className="font-bold mr-2">Ingredients:</span>
@@ -56,8 +55,8 @@ const Recipies = ({
       </div>
       <div className="p-4 flex justify-center items-center">
         <button
-          className={`bg-red-500 hover:bg-red-700 ${
-            !isButtonDisabled ? "bg-red-500" : "bg-red-200"
+          className={`bg-red-500 ${
+            isButtonDisabled ? "bg-green-300 cursor-not-allowed" : ""
           } text-white font-bold py-2 px-4 rounded`}
           onClick={handleButtonClick}
           disabled={isButtonDisabled}
