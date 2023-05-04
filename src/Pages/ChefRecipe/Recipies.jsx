@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import StarRatings from "react-star-ratings";
 
 const Recipies = ({
   id,
@@ -11,6 +12,7 @@ const Recipies = ({
   recipePic,
 }) => {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const [stars, setStars] = useState(rating);
 
   const handleButtonClick = () => {
     setIsButtonDisabled(true);
@@ -25,6 +27,12 @@ const Recipies = ({
       theme: "colored",
     });
   };
+
+  const handleRatingChange = (newRating) => {
+    // Do something with the new rating
+    setStars(newRating);
+  };
+
   return (
     <div className="max-w-md mx-auto rounded-md overflow-hidden shadow-lg flex flex-col">
       <img
@@ -50,13 +58,22 @@ const Recipies = ({
         </div>
         <div className="mb-4">
           <span className="font-bold mr-2">Rating:</span>
-          <span>{rating}</span>
+          <StarRatings
+            rating={rating}
+            readonly
+            starRatedColor="#FFC107"
+            starHoverColor="#FFC107"
+            changeRating={handleRatingChange}
+            numberOfStars={5}
+            starDimension="20px"
+            starSpacing="2px"
+          />
         </div>
       </div>
       <div className="p-4 flex justify-center items-center">
         <button
           className={`bg-red-500 ${
-            isButtonDisabled ? "bg-green-300 cursor-not-allowed" : ""
+            isButtonDisabled ? "bg-red-300 cursor-not-allowed" : ""
           } text-white font-bold py-2 px-4 rounded`}
           onClick={handleButtonClick}
           disabled={isButtonDisabled}
