@@ -11,20 +11,20 @@ const ChefSingleData = ({
   likes,
 }) => {
   return (
-    <div >
-      <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="flex justify-center">
+      <div className="card card-compact bg-base-100 shadow-xl max-w-sm mx-auto">
         <figure>
           <LazyLoad height={200} once>
-            <img src={chefPicture} style={{ width: "350px" }} alt={chefName} />
+            <img src={chefPicture} className="w-full" alt={chefName} />
           </LazyLoad>
         </figure>
 
-        <div className="card-body text-center">
+        <div className="card-body text-center flex">
           <h2 className="card-title justify-center">{chefName}</h2>
-          <p>Years of Experience: {yearsOfExperience}</p>
-          <p>Number of Recipes: {numberOfRecipes}</p>
-          <p>Likes: {likes}</p>
-          <div className="card-actions justify-center">
+          <p className="text-sm">Years of Experience: {yearsOfExperience}</p>
+          <p className="text-sm">Number of Recipes: {numberOfRecipes}</p>
+          <p className="text-sm">Likes: {likes}</p>
+          <div className="card-actions justify-center text-center">
             <Link to={`/chefRes/${id}`}>
               <button className="btn btnz">View Recipe</button>
             </Link>

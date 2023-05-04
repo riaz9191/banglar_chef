@@ -12,6 +12,9 @@
 .my-container {
   @apply px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12;
 }
+.my-containerr {
+  @apply px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ;
+}
 .btnz{
     @apply text-white bg-red-600 border-0 hover:bg-red-700
 }
@@ -32,7 +35,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("https://t4.ftcdn.net/jpg/05/02/88/97/360_F_502889731_E4VSkIr8MjXIQKd5uW60KTVl6W8ScUBz.jpg");
+  /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("https://t4.ftcdn.net/jpg/05/02/88/97/360_F_502889731_E4VSkIr8MjXIQKd5uW60KTVl6W8ScUBz.jpg"); */
   background-size: cover;
   animation: fade 9*s forwards;
 }

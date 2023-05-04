@@ -15,11 +15,12 @@ const ChefAllData = () => {
   }, []);
 
   return (
-    <div className="grid lg:grid-cols-3 gap-8 justify-between mt-12 my-container">
-      {chefData.map((cData) => (
-        <ChefSingleData key={cData.id} {...cData} />
-      ))}
-    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-between mt-12 my-container" style={{paddingLeft: '20px', paddingRight: '20px'}}>
+    {chefData.map((cData) => (
+      <ChefSingleData key={cData.id} {...cData} />
+    ))}
+  </div>
+  
   );
 };
 
