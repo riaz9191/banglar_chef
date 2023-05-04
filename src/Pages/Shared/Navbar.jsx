@@ -72,7 +72,7 @@ const Navbar = () => {
                       isActive ? "active" : "default"
                     }
                   >
-                    console.error();
+                    Error
                   </NavLink>
                 </ul>
               </div>

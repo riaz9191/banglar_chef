@@ -6,7 +6,7 @@ const ChefAllData = () => {
 
   useEffect(() => {
     const fetchChefData = async () => {
-      const response = await fetch("http://localhost:7000/chefData");
+      const response = await fetch("https://b7a10-chef-recipe-hunter-server-side-riaz9191-riaz9191.vercel.app/chefdata");
       const data = await response.json();
       setChefData(data);
     };

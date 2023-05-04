@@ -9,7 +9,7 @@ const ChefRecipe = () => {
 
   useEffect(() => {
     const fetchRecipeData = async () => {
-      const response = await fetch("http://localhost:7000/recipe");
+      const response = await fetch("https://b7a10-chef-recipe-hunter-server-side-riaz9191-riaz9191.vercel.app/recipe");
       const data = await response.json();
       setRecipe(data);
     };

@@ -56,8 +56,8 @@ const Recipies = ({
       </div>
       <div className="p-4 flex justify-center items-center">
         <button
-          className={`bg-red-500 ${
-            !isButtonDisabled ? "hover:bg-red-700" : "bg-green-400"
+          className={`bg-red-500 hover:bg-red-700 ${
+            !isButtonDisabled ? "bg-red-500" : "bg-red-200"
           } text-white font-bold py-2 px-4 rounded`}
           onClick={handleButtonClick}
           disabled={isButtonDisabled}

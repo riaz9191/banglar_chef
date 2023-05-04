@@ -52,7 +52,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:7000/chefdata/${params.id}`),
+          fetch(`https://b7a10-chef-recipe-hunter-server-side-riaz9191-riaz9191.vercel.app/chefdata/${params.id}`),
       },
     ],
   },
