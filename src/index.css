@@ -18,7 +18,50 @@
 .exc{
     @apply text-white bg-red-600 border-0 ps-4 pr-4 pt-2 pb-2
 }
+.excz{
+    @apply text-white bg-green-700 border-0 ps-4 pr-4 pt-2 pb-2
+}
+.hero {
+  position: relative;
+}
 
+.hero:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("https://t4.ftcdn.net/jpg/05/02/88/97/360_F_502889731_E4VSkIr8MjXIQKd5uW60KTVl6W8ScUBz.jpg");
+  background-size: cover;
+  animation: fade 9*s forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-bg {
+  animation: move-bg 2s ease-in-out infinite;
+  transform: scale(1.05) rotate(4deg);
+}
+
+@keyframes move-bg {
+  0% {
+    transform: scale(1) rotate(-6deg) translateX(0);
+  }
+  50% {
+    transform: scale(1) rotate(6deg) translateX(10%);
+  }
+  100% {
+    transform: scale(1) rotate(-6deg) translateX(0);
+  }
+}
 
 
 @layer utilities {

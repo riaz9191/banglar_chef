@@ -28,10 +28,10 @@ const ChefRecipe = () => {
             className="max-w-sm rounded-lg shadow-2xl"
           />
           <div className="flex-1 px-4 py-8 lg:py-0 lg:pl-8">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+            <h1 className="text-4xl lg:text-5xl text-white font-bold mb-4">
               {chefData.chefName}
             </h1>
-            <p className="text-gray-600 mb-8">{chefData.shortDescription}</p>
+            <p className="text-white mb-8">{chefData.shortDescription}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white rounded-lg p-6 shadow">
                 <h2 className="text-lg font-bold mb-4">Years of Experience</h2>
@@ -55,7 +55,9 @@ const ChefRecipe = () => {
         </div>
         
       </div>
-      <div className="grid lg:grid-cols-3 gap-8 justify-between mt-12 my-container">
+      <div className=" text-center text-3xl mt-8 bg-red-400 text-white mb-0">Recipes</div>
+      <div className="grid lg:grid-cols-3 gap-8 justify-between my-container">
+        
               {recipe.map((recipe) => (
                 <Recipies key={recipe.id} {...recipe} />
               ))}

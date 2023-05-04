@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useEffect, useState } from "react";
 import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -12,11 +15,13 @@ import app from "../firebas/firebase.config";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
-
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider()
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
 
+  // email login
   const registerUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -38,6 +43,16 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  //google login
+  const googleLogin =()=>{
+   return signInWithPopup(auth,googleProvider)
+  }
+  //github login
+  const githubLogin =()=>{
+    return signInWithPopup(auth,githubProvider)
+  }
+  
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (loggedInUser) => {
       setUser(loggedInUser);
@@ -54,7 +69,9 @@ const AuthProvider = ({ children }) => {
     logOut,
     loginUser,
     loading,
-    updateData
+    updateData,
+    googleLogin,
+    githubLogin
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -9,21 +9,24 @@ const Home = () => {
   return (
     <div>
       <div
-        className="hero min-h-screen  bg-black opacity-100"
+        className="hero min-h-screen  bg-black opacity-100 hero-bg "
         style={{
-          backgroundImage: `url("https://blog.petpooja.com/wp-content/uploads/2022/05/best-chefs-in-India.jpg")`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url("https://t4.ftcdn.net/jpg/05/02/88/97/360_F_502889731_E4VSkIr8MjXIQKd5uW60KTVl6W8ScUBz.jpg")`,
         }}
       >
-        <div className="hero-overlay bg-opacity-75"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+        <div className="hero-overlay bg-opacity-0"></div>
+        <div className="hero-content text-center text-neutral-content  mr-5">
+          <div className="max-w-5xl">
+            <h1 className="mb-5 text-5xl font-bold">Discover Amazing Chefs</h1>
             <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Explore our collection of talented chefs from around the world.
+              Each one has a unique story to tell and a passion for creating
+              delicious food. Whether you're looking for culinary inspiration or
+              just love good food, you're sure to find something amazing here.
             </p>
-            <Link to='/register'><button className="btn btn-primary">Register Here</button></Link>
+            <Link to="/register">
+              <button className="btn excz animate-bg hover:bg-green-600">Register Now</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -35,8 +38,8 @@ const Home = () => {
           </h2>
         </div>
         <div className=" ps-5 pr-5">
-          <p className="text-3xl text-center">
-            Chefs are an important part of the culinary industry and are often
+          <p className="text-xl text-center">
+            Chefs are an important part of the culinary industry and are <br /> often
             celebrated for their creativity, skill, and dedication to their
             craft.
           </p>
@@ -46,7 +49,7 @@ const Home = () => {
       <div>
         <div className="flex justify-center">
           <h2 className="text-center mt-8 font-bold text-4xl mb-8 text-red-600 exc">
-           Exclusive Services
+            Exclusive Services
           </h2>
         </div>
 
@@ -55,7 +58,7 @@ const Home = () => {
       <div>
         <div className="flex justify-center">
           <h2 className="text-center mt-8 font-bold text-4xl mb-8 text-red-600 exc">
-          You should also view 
+            You should also view
           </h2>
         </div>
         <AlsoView></AlsoView>
